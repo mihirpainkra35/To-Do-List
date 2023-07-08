@@ -2,6 +2,7 @@ let text = document.getElementById('textid');
 let List = document.getElementById('ulid');
 let savebtn = document.getElementById('addbtn')
 var editvalue = null;
+var editvalue2 = null;
 var listno = 0;
 
 
@@ -24,11 +25,11 @@ add = () => {
 
         //delete button
 
-    
+
         const btn = document.createElement("button");
         const edt = document.createElement("button");
         // const classbtn = document.classList('close')
-      
+
         btn.classList = 'close';
         edt.classList = 'edit';
         btn.innerHTML = `Delete`;
@@ -37,12 +38,14 @@ add = () => {
 
     }
     else if (savebtn.innerHTML == "save") {
-        
+
         let liList = document.getElementsByTagName('li');
-
+console.log(editvalue2+"Delete")
         for (let i = 0; i < liList.length; i++) {
-            if (liList[i].innerText === editvalue + "DeleteEdit") {
+          
+            if (liList[i].innerText === editvalue2) {
 
+                console.log(liList[i].innerText)
                 liList[i].innerText = text.value;
                 const btn = document.createElement("button");
                 const edt = document.createElement("button");
@@ -75,8 +78,11 @@ List.addEventListener('click', function (e) {
     }
     else if (e.target.classList == "edit") {
 
-        editvalue = e.target.parentElement.innerText.replace("DeleteEdit", "")
-        text.value = e.target.parentElement.innerText.replace("DeleteEdit", "")
+        editvalue = e.target.parentElement.innerText.replace("Delete", "")
+        editvalue = editvalue.replace("Edit", "")
+        editvalue2 = e.target.parentElement.innerText;
+       
+        text.value = editvalue;
         text.focus();
         savebtn.innerHTML = 'save'
     }

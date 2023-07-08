@@ -49,8 +49,9 @@ h1 {
 }
 #ulid{
     margin: auto;
-
-    width: 65%;
+    width: 141%;
+    position: relative;
+    left: -45px;
 }
 
 #input-container {
@@ -122,8 +123,8 @@ h1 {
 
 #ulid li .close{
     
-    position: relative;
-    right: -9px;
+    position: absolute;
+    right: 36px;
     border: none;
     background-color: #f09090;
     font-weight: bold;
@@ -134,8 +135,8 @@ h1 {
 }
 #ulid li .edit{
     
-    position: relative;
-    right: -16px;
+    position: absolute;
+    right: 100px;
     border: none;
     background-color: #f09090;
     font-weight: bold;
