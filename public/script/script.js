@@ -40,9 +40,9 @@ add = () => {
     else if (savebtn.innerHTML == "save") {
 
         let liList = document.getElementsByTagName('li');
-console.log(editvalue2+"Delete")
+        console.log(editvalue2 + "Delete")
         for (let i = 0; i < liList.length; i++) {
-          
+
             if (liList[i].innerText === editvalue2) {
 
                 console.log(liList[i].innerText)
@@ -81,7 +81,7 @@ List.addEventListener('click', function (e) {
         editvalue = e.target.parentElement.innerText.replace("Delete", "")
         editvalue = editvalue.replace("Edit", "")
         editvalue2 = e.target.parentElement.innerText;
-       
+
         text.value = editvalue;
         text.focus();
         savebtn.innerHTML = 'save'
